@@ -1,19 +1,33 @@
-import { Img, Li, DivInfo } from './PizzaItem.styled';
+import {
+  Img,
+  Li,
+  DivInfo,
+  DivPhoto,
+  DivText,
+  PPrice,
+  DivLoader,
+} from './PizzaItem.styled';
 import {
   addItemCart,
   changeDecrementItemCart,
   changeIncrementItemCart,
-  delereCartItem,
+  deleteCartItem,
 } from '../../../redux/cart/cart-actions';
-import { useDispatch, useSelector } from 'react-redux';
-import { getCart } from '../../../redux/cart/cart-selector';
+import { useDispatch } from 'react-redux';
+
 import Counter from '../../Counter/Counter';
 import Button from '@mui/joy/Button';
+import { useState } from 'react';
+import SpinnerLoader from '../../SpinnerLoader/SpinnerLoader';
 
 const PizzaItem = ({ id, title, description, price, image, buy, count }) => {
-  const cart = useSelector(getCart);
+  const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
   const item = { id, title, description, price, image };
+
+  const onLoad = () => {
+    setLoaded(true);
+  };
 
   const handleClick = () => {
     dispatch(addItemCart(item));
@@ -21,23 +35,34 @@ const PizzaItem = ({ id, title, description, price, image, buy, count }) => {
 
   return (
     <Li>
-      <Img src={image} alt={title}></Img>
+      <DivPhoto>
+        <Img onLoad={onLoad} src={image} alt={title}></Img>
+        {!loaded && (
+          <DivLoader>
+            <SpinnerLoader height="280px" />
+          </DivLoader>
+        )}
+      </DivPhoto>
       <DivInfo>
-        <h3>{title}</h3>
-        <p>{price}</p>
-        <p>{description}</p>
+        <DivText>
+          <h3>{title}</h3>
+          <PPrice>{price} UAH</PPrice>
+          <p>{description}</p>
+        </DivText>
         {buy ? (
           <Counter
             count={count}
             changeDecrement={() =>
               count === 1
-                ? dispatch(delereCartItem(id))
+                ? dispatch(deleteCartItem(id))
                 : dispatch(changeDecrementItemCart(id))
             }
             changeIncrement={() => dispatch(changeIncrementItemCart(id))}
           />
         ) : (
-          <Button onClick={handleClick}>Add to cart</Button>
+          <Button size="sm" onClick={handleClick}>
+            Add to cart
+          </Button>
         )}
         {/* <button onClick={handleClick}>Add to cart</button> */}
       </DivInfo>

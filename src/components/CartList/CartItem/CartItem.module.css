@@ -1,0 +1,12 @@
+.delete{
+    cursor: pointer;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+
+}
+
+.delete:hover{
+    fill: #B22222;
+}
+

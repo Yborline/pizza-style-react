@@ -2,11 +2,12 @@ import styled from "styled-components"
 
 export const Div = styled.div`
 display: flex;
-border: 0.5px solid;
-height: 30px;
+
+
+height: 20px;
 border-radius: 20px;
-min-width: 90px;
-max-width: 90px;
+min-width: 80px;
+max-width: 80px;
 align-items: center;
 justify-content:center;
 
@@ -14,19 +15,19 @@ justify-content:center;
 `
 
 export const Button = styled.button`
-padding-left: 0px;
-height: 20px;
+padding: 0px;
+height: 15px;
 width: 20px;
 border: 0px;
 color: ${({theme}) => theme.text};
-background-color: ${({ theme }) => theme.basketList};
+background-color: white;
 cursor: pointer;
 `
 
 export const Span = styled.span`
-margin: 0px 4px 0px 4px;
+
 background-color: ${({ theme }) => theme.basketList};
-width: 30px;
+width: 20px;
 text-align: center;
 
    

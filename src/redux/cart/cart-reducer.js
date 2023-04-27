@@ -3,7 +3,8 @@ import {
   addItemCart,
   changeDecrementItemCart,
   changeIncrementItemCart,
-  delereCartItem,
+  deleteCartItem,
+  deleteCart,
 } from './cart-actions';
 
 export const cart = createReducer(
@@ -41,9 +42,13 @@ export const cart = createReducer(
       ],
     }),
 
-    [delereCartItem]: (state, { payload }) => ({
+    [deleteCartItem]: (state, { payload }) => ({
       ...state,
       cart: [...state.cart.filter(card => card.id !== payload)],
+    }),
+    [deleteCart]: (state, { payload }) => ({
+      ...state,
+      cart: [],
     }),
   },
 );

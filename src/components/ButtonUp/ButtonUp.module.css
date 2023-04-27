@@ -1,0 +1,11 @@
+.button {
+
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    color: #1E90FF;
+}
+
+.button:hover {
+    color: #696969;
+}

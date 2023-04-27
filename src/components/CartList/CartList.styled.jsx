@@ -1,8 +1,14 @@
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
-
-export const Link = styled(NavLink)`
-color: white;
 
 
-  `
+export const Ul = styled.ul`
+  padding: 10px;
+
+      @media screen and (min-width: 768px) {
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+
+`

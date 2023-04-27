@@ -1,10 +1,11 @@
-import PizzaList from "../../components/PizzaList/PizzaList";
+import PizzaList from '../../components/PizzaList/PizzaList';
+import ButtonUp from '../../components/ButtonUp/ButtonUp';
 
 const PizzaStyle = () => {
   return (
     <>
-      <h1>PizzaStyle</h1>
       <PizzaList />
+      <ButtonUp />
     </>
   );
 };
