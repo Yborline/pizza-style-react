@@ -2,8 +2,6 @@ import styled from "styled-components"
 
 export const Div = styled.div`
 display: flex;
-
-
 height: 20px;
 border-radius: 20px;
 min-width: 80px;

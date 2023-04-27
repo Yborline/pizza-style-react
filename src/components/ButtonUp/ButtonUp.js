@@ -24,10 +24,7 @@ const ButtonUp = () => {
   useEffect(() => {
     window.addEventListener('scroll', debounce(handleScroll, 200));
     return () => window.removeEventListener('scroll', handleScroll);
-    // window.removeEventListener("scroll", debounce(handleScroll), 200);
   }, []);
-
-  console.log(scroll);
 
   return (
     <>

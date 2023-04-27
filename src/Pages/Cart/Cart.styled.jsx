@@ -3,10 +3,7 @@ import { NavLink } from "react-router-dom";
 
 
 export const Link = styled(NavLink)`
-color: white;
-
-
-  `
+color: white;`
 
 export const DivButton = styled.div`
   display:flex;

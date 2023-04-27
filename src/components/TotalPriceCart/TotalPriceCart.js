@@ -4,7 +4,6 @@ import { P } from './TotalPriceCart.styled';
 
 const TotalPriceCart = () => {
   const cart = useSelector(getCart);
-
   const TotalPrice = cart.reduce(
     (totalPrice, item) => totalPrice + Number(item.price) * item.count,
     0,

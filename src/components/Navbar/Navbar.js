@@ -5,7 +5,6 @@ import { getCountCart } from '../../redux/cart/cart-selector';
 function Navbar() {
   const count = useSelector(getCountCart);
 
-  console.log(count);
   return (
     <div>
       <Ul>
