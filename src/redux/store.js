@@ -25,14 +25,9 @@ const cartPersistConfig = {
   storage,
 };
 
-// const authRootReduceer = combineReducers({
-//   cart: persistReducer(authPersistConfig, cart),
-// });
-
 export const store = configureStore({
   reducer: {
     shopping: persistReducer(cartPersistConfig, cart),
-    // clothes: combineReducers({ loadingCloth, items }),
   },
   middleware,
 });

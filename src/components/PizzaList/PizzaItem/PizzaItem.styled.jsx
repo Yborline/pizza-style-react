@@ -3,10 +3,7 @@ import styled from "styled-components";
 
 export const Img = styled.img`
 width: 100%;
-:hover{
-      transition: transform 0.25s;
-    transform: scale(1.1);
-}
+height: 100%;
 `
 
 export const Li = styled.li`
@@ -18,6 +15,14 @@ width: 100%;
 height:430px;
 :hover{
  box-shadow: 7px 7px 13px 0px rgba(11,97,143,0.75);
+ div{
+  img{
+      transition: transform 0.25s;
+    transform: scale(1.1);
+}
+
+
+  }
 } `
 
 export const DivInfo= styled.div`

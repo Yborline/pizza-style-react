@@ -9,7 +9,7 @@ const PizzaList = () => {
 
   return (
     <Ul>
-      {products &&
+      {products && 
         products.map(({ id, title, description, price, image }) => {
           const reapet = cart.find(itemCart => itemCart.id === id);
           if (reapet) {

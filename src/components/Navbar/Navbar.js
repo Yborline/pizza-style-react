@@ -1,4 +1,4 @@
-import { Ul, Link, SpanCartNumber } from './Navbar.styled';
+import { Ul, Link, SpanCartNumber, Container } from './Navbar.styled';
 import { useSelector } from 'react-redux';
 import { getCountCart } from '../../redux/cart/cart-selector';
 
@@ -6,7 +6,7 @@ function Navbar() {
   const count = useSelector(getCountCart);
 
   return (
-    <div>
+    <Container>
       <Ul>
         <li>
           <Link to="/" end>
@@ -16,11 +16,11 @@ function Navbar() {
         <li>
           <Link to="/cart">
             Cart
-            {count === 0 ? <></> : <SpanCartNumber>{count}</SpanCartNumber>}
+            {count === 0 ? null : <SpanCartNumber>{count}</SpanCartNumber>}
           </Link>
         </li>
       </Ul>
-    </div>
+    </Container>
   );
 }
 

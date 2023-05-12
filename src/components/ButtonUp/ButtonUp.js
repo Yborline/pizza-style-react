@@ -7,6 +7,7 @@ import { useRef } from 'react';
 
 const ButtonUp = () => {
   const [scroll, setScroll] = useState(0);
+  // const croll = useRef(0);
   const windowWidth = useRef(window.innerWidth);
 
   const handleScroll = () => {
@@ -28,14 +29,12 @@ const ButtonUp = () => {
 
   return (
     <>
-      {scroll > 250 && windowWidth.current < 767 ? (
+      {scroll > 250 && windowWidth.current < 767 && (
         <BsFillArrowUpCircleFill
           onClick={handleUpButton}
           className={s.button}
           size="35px"
         ></BsFillArrowUpCircleFill>
-      ) : (
-        <></>
       )}
     </>
   );

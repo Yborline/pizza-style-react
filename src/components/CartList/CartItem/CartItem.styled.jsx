@@ -3,11 +3,15 @@ import styled from "styled-components";
 export const Img = styled.img`
 border-radius: 5px;
 width:90px;
+
+height: 90px;
       @media screen and (min-width: 768px) {
 width:100px;
+height: 100px;
   }
         @media screen and (min-width: 1280px) {
 width:120px;
+height: 120px;
   }`
 
 
@@ -19,6 +23,9 @@ display:flex;
 
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin-bottom:15px;
+  :last-of-type{
+      margin-bottom:0px;
+  }
       @media screen and (min-width: 768px) {
         height: 130px;
 width: 730px;

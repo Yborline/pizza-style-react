@@ -33,10 +33,16 @@ const PizzaItem = ({ id, title, description, price, image, buy, count }) => {
     dispatch(addItemCart(item));
   };
 
+  const changeDecrement = () => {
+    count === 1
+      ? dispatch(deleteCartItem(id))
+      : dispatch(changeDecrementItemCart(id));
+  };
+
   return (
     <Li>
       <DivPhoto>
-        <Img onLoad={onLoad} src={image} alt={title}></Img>
+        <Img loading="lazy" onLoad={onLoad} src={image} alt={title}></Img>
         {!loaded && (
           <DivLoader>
             <SpinnerLoader height="280px" />
@@ -52,11 +58,7 @@ const PizzaItem = ({ id, title, description, price, image, buy, count }) => {
         {buy ? (
           <Counter
             count={count}
-            changeDecrement={() =>
-              count === 1
-                ? dispatch(deleteCartItem(id))
-                : dispatch(changeDecrementItemCart(id))
-            }
+            changeDecrement={changeDecrement}
             changeIncrement={() => dispatch(changeIncrementItemCart(id))}
           />
         ) : (

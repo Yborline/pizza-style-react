@@ -8,19 +8,7 @@ const CartList = () => {
   const cart = useSelector(getCart);
 
   return (
-    <Ul>
-      {cart.map(({ id, title, description, price, image, count }) => (
-        <CartItem
-          key={id}
-          id={id}
-          title={title}
-          description={description}
-          price={price}
-          image={image}
-          count={count}
-        />
-      ))}
-    </Ul>
+    <Ul>{cart && cart.map(item => <CartItem key={item.id} item={item} />)}</Ul>
   );
 };
 

@@ -9,12 +9,13 @@ import { Img, Li, DivImg, PTitle, PPrice, DivInfo } from './CartItem.styled';
 import { AiFillDelete } from 'react-icons/ai';
 import s from './CartItem.module.css';
 
-const CartItem = ({ id, title, description, price, image, count }) => {
+const CartItem = ({ item }) => {
+  const { id, title, description, price, image, count } = item;
   const dispatch = useDispatch();
   return (
     <Li>
       <DivImg>
-        <Img src={image} alt={title} />
+        <Img loading="lazy" src={image} alt={title} />
         <Counter
           count={count}
           changeDecrement={() =>
@@ -31,6 +32,7 @@ const CartItem = ({ id, title, description, price, image, count }) => {
         <p>{description}</p>
 
         <AiFillDelete
+          aria-label="delete"
           className={s.delete}
           onClick={() => dispatch(deleteCartItem(id))}
           size="20px"
